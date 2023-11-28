@@ -1,0 +1,120 @@
+S_name,S_detail,S_precaution,S_disease,S_doctor
+Fever,Fever is the temporary increase in the body's temperature in response to a disease or illness. ,"Drink plenty of fluids to stay hydrated.
+Dress in lightweight clothing.
+Use a light blanket if you feel chilled, until the chills end.
+Take acetaminophen ","Bone infections,appendicitis, skin infections or cellulitis, meningitis,Respiratory infections ","pulmonologist(Respiratory infection),orthopaedic(Bone infection)"
+Breathlessness,"An intense tightening in the chest, air hunger, difficulty breathing, breathlessness or a feeling of suffocation.","Deep breathing. ...
+Pursed lip breathing. ...
+Sleeping in a relaxed position. ...
+Stem inhalation. ...
+Black coffee.","Chronic lung diseases, including COPD, asthma, pulmonary fibrosis and pulmonary hypertension.","pulmonologist,asthama(lung disease),hypertension(Hypertension Specialist)"
+Hair loss,"Hair loss, also called alopecia, is a disorder caused by an interruption in the body's cycle of hair production. Hair loss can occur anywhere on the body, but most commonly affects the scalp. ","Avoid hairstyles that pull on the hair. ...
+Avoid high-heat hair styling tools. ...
+Don't chemically treat or bleach your hair.","Cicatricial Alopecia.
+Hair Shaft Abnormalities.
+Hypotrichosis.",Dermatologist
+Tiredness,"Tiredness, or fatigue, means having less energy than usual. You feel exhausted, either mentally, physically, or both. ","Eat often to beat tiredness. 
+Get moving.
+Lose weight to gain energy.
+Sleep well.
+Reduce stress to boost energy. ","Adrenal insufficiency.
+Amyotrophic lateral sclerosis (ALS)
+Anemia ","Adrenal insufficiency(endocrinologist),Amyotrophic lateral sclerosis(neurologist ),Anemia(General Physician)"
+Vomiting,Vomiting is the forceful ejection of the contents of the stomach and upper digestive system through the mouth. It is sometimes known as throwing up or being sick. ,"Stay home to avoid passing the infection to others.
+Drink plenty of clear fluids or oral rehydration solution to replace lost fluids ? take small sips if you feel sick.
+Avoid fruit juice, cordial and sugary drinks.
+Avoid alcohol and caffeine.","Food poisoning.
+Poisoning.",General physician
+Weight loss,Weight loss is a decrease in body weight by either following a diet and exercise regime or because of involuntarily circumstances such as illness.,"Eat three balanced meals a day to help control your hunger.
+Watch portion sizes and eat small servings of a variety of foods.
+Choose low-calorie snacks.
+Eat only when you are hungry and stop when you are satisfied.","Cancer,Chronic infection","oncologist(cancer),chronic infection( Infectious Disease Specialist )"
+Headache,"A headache is a pain in your head or face that's often described as a pressure that's throbbing, constant, sharp or dull. Headaches can differ greatly in regard to pain type, severity, ","Avoid medication overuse. ...
+Get enough sleep. ...
+Don't skip meals. ...
+Exercise regularly. ...
+Reduce stress. ...
+Reduce caffeine.","Classic Migraine,tumor","neurologist(migraine),oncologist(tumor)"
+Allergies,Allergy occurs when a person reacts to substances in the environment that are harmless to most people. ,"void your allergens. This is very important but not always easy. ...
+Take your medicines as prescribed. ...
+If you are at risk for anaphylaxis,","Hay fever (allergic rhinitis), eczema, hives, asthma, and food allergy ","Allergists,immunologists,"
+Back problem,"Back pain can happen when mechanical or structural problems develop in the spine, discs, muscles, ligaments, or tendons in the back, or compress a nerve.","Do muscle-strengthening and stretching exercises at least 2 days a week.
+Stand and sit up straight.
+Avoid heavy lifting. If you do lift something heavy, bend your knees and keep your back straight. ...
+Get active and eat healthy.","Arthritis,
+Osteoporosis.",Nephrologist
+Chest pain,Chest pain is discomfort or pain that you feel anywhere along the front of your body between your neck and upper abdomen.,"Eating a healthy diet. ...
+Managing health conditions you have, such as high blood pressure, high cholesterol and diabetes.
+Exercising most days of the week.
+Reaching and maintaining a weight","Heart attack (lack of blood to your heart).
+Coronary artery disease",Cardiologist
+Ear pain,"An earache is a sharp, dull, or burning pain in one or both ears. The pain may last a short time or be ongoing.","Apply a cold washcloth to the ear.
+Avoid getting the ear wet.
+Sit upright to help relieve ear pressure.
+Use over-the-counter (OTC) ear drops.
+Take OTC pain relievers.","Sinus infection,Hole in the eardrum.",otolaryngologist
+Itching,Itchy skin is an irritating sensation that makes you want to scratch.,"Moisturize daily. ...
+Treat the scalp. ...
+Use creams, lotions or gels that soothe and cool the skin. ...
+Avoid scratching. ...
+Take a bath. ","dry skin (xerosis), eczema (dermatitis), psoriasis, scabies, parasites, burns, scars, insect bites and hives",Dermatologist
+Mouth Ulcer,A mouth ulcer is the loss or erosion of the delicate lining tissue of the mouth (mucous membrane). ,"Practice good oral hygiene.
+Eat a healthy diet.
+Employ gentle brushing for your teeth and gums.
+Get a good intake of vitamin B, C, and zinc.
+Avoid very hot drinks and food.","crohn's ,Viral infection","Gastroenterologist (Crohns),General physican(Viral infection)"
+Nose blooding,"A nosebleed happens when one of the blood vessels in the lining of the nose bursts. Nosebleeds may be caused by infection, injury, allergic reaction, nose picking or an object being pushed into the nostril. ","Not picking the nose
+Pinch your nose
+Pack your nose
+Sit and lean forward
+Breathe through your Mouth
+Use a cold compress
+Use a humidifier
+Try nose spray","Nasal tumors.
+Nasal polyps.
+Immune thrombocytopenia.",otolaryngologist
+Sore throat,"A sore throat is pain, scratchiness or irritation of the throat that often worsens when you swallow. The most common cause of a sore throat (pharyngitis) is a viral infection, ","Rest. Get plenty of sleep. ...
+Drink fluids. Fluids keep the throat moist and prevent dehydration. ...
+Try comforting foods and beverage. ...
+Gargle with saltwater. ...
+Humidify the air. ?","Tonsillitis
+Influenza
+Rheumatic fever",General physician
+Toothache,Toothache refers to pain in and around the teeth and jaws that's usually caused by tooth decay. You may feel toothache in many ways. It can come and go or be constant.,"Rinse your mouth with warm water.
+Use dental floss to remove any food particles or plaque wedged between your teeth.
+Consider taking an over-the-counter (OTC) pain reliever to dull the ache,","Cavities.
+Abscessed tooth.
+Cracked tooth.",Dentist
+Tinnitus,"Tinnitus is when you experience ringing or other noises in one or both of your ears. The noise you hear when you have tinnitus isn't caused by an external sound,","Use hearing protection. Over time, exposure to loud sounds can damage the nerves in the ears, causing hearing loss and tinnitus. ...
+Turn down the volume. ...
+Use white noise. ...
+Limit alcohol, caffeine and nicotine.","High blood pressure, atherosclerosis"," cardiologist(High blood pressure),Neurologist(atherosclerosis)"
+Urinary,"UTIs are common infections that happen when bacteria, often from the skin or rectum, enter the urethra, and infect the urinary tract.","Stay well hydrated.
+Take showers instead of baths.
+Minimize douching, sprays, or powders in the genital area.","Bladder infections ,kidney infection",Rheumatologists
+Swelling,Swelling is any abnormal enlargement of a body part. It is typically the result of inflammation or a buildup of fluid.,"Elevate your legs when you are sitting or lying down.
+If you have edema of the legs, wear support stockings. ...
+Do not sit or stand for long periods of time without moving around.
+Follow your doctor's advice about limiting how much salt you eat.","Congestive heart failure,
+Liver damage,
+Kidney disease","cardiologist(Heart failure), Hepatologists(Liver damage)"
+Foot pain,"Pain in the foot can be a consequence of damage, pressure or rubbing over a long period of time.","Wear roomy footwear
+Apply ice
+Take a pain reliever
+Proper stretching before activity
+Maintain a healthy weight","Broken ankle.
+Broken foot.
+Broken toe.
+Bunions.",orthopedic surgeon
+Dizziness,"Dizziness is a term that describes a range of feelings, such as feeling unsteady, woozy, weak or faint. It is something that most people may experience from time to time. It is rarely the sign of a serious problem.","Avoid sudden head movements.
+Focus on a stationary object while walking or whenever feeling dizzy.
+Wear shoes with hard soles and low heels.
+Avoid slippery or uneven surfaces when walking.","migraine, inflammation","Neurologist(migraine),inflammation(rheumatologist)"
+Dehydration,"Dehydration occurs when your body loses more fluid than you take in. When the normal water content of your body is reduced, it upsets the balance of minerals (salts and sugar) in your body, ","Drink plenty of water, as directed by your doctor.
+Eat foods with high amounts of water like fruits and vegetables.
+Avoid or limit drinks with caffeine like coffee, teas and soft drinks.
+Avoid or limit drinks with alcohol.","urinary tract infections, kidney stones and even kidney failure.",Rheumatologists
+Constipation,"Constipation is a condition in which a person has uncomfortable or infrequent bowel movements. Generally, a person is considered to be constipated when bowel movements result in passage of small amounts of hard, dry stool, usually fewer than three times a week.","Eat lots of high-fiber foods, including vegetables, fruits, beans and whole-grain foods. Eat fewer foods with low amounts of fiber such as processed foods, dairy and meats. Drink plenty of fluids","irritable bowel syndrome (IBS)
+diabetes.
+hypercalcaemia ",General physician
+catarrh,"Catarrh is a build-up of mucus in an airway or cavity of the body. It usually affects the back of the nose, the throat or the sinuses (air-filled cavities in the bones of the face).",Cover your mouth and nose when coughing or sneezing. Use tissues and throw them away. Wash your hands or use a hand sanitizer every time you touch your mouth or nose.,"Infections,Allergies, Gastroesophageal reflux disease","General physician(Infection,allergies),gastroenterologist(Gastroesophageal reflux disease)"
