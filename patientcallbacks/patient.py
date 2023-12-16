@@ -3,7 +3,7 @@ async def separete_patientdata(patient_Data):
     print("we here")
     p_list = []
     for i in patient_Data:
-        print(patient_Data[i])
+       
         p_list.append(patient_Data[i])
         
 

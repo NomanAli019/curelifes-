@@ -4,8 +4,8 @@ from patientcallbacks.patient import separete_patientdata
 from typing import Dict
 import random 
 import json
-from doctorDataCleaning.doctClean import doc_data_sepration
-from patientcallbacks import patient  
+from doctorDataCleaning.doctClean import doc_data_sepration 
+from doctorcallbacks.doctor import inserting_doctor_Data , Dset_online_booking , Dset_onsite_booking,getting_doctor
 app = FastAPI()
 import requests
 from bs4 import BeautifulSoup
@@ -22,9 +22,10 @@ async def dermotologist_lahore(city:str , speciality:str , pageno:int):
     response = requests.get(f"https://www.marham.pk/doctors/{city}/{speciality}?page={str(pageno)}")
     response.raise_for_status()  # Add parentheses to raise_for_status()
     if response:
+        
         dero_respo_all = response.text
         soup = BeautifulSoup(dero_respo_all, "html.parser")
-        class_name_for_doc_details = "py-3 mt-2 bg-white col-md-11 col-lg-10 col-12 center doc-card-shadow doctor-card"
+        class_name_for_doc_details = "row shadow-card"
         data = soup.find_all("div", class_=class_name_for_doc_details)
         
         dermo_doc_data = []
@@ -34,19 +35,57 @@ async def dermotologist_lahore(city:str , speciality:str , pageno:int):
         
         return dermo_doc_data
     else:
+        
         return None
 
-@app.post("/patient_data")
+# patient insert 
+@app.post("/patient_datainsert")
 async def patient_data(data: dict):
         # Assuming data is a dictionary
     if data:
+        print("we here")
         await separete_patientdata(data)
         return {"data_entered": "yes"}
     else:
         return {"data_entered":"No"}
 
-    
- 
+# doctor insert
+@app.post("/doctors_datainsert")
+async def doctor_data(data:dict):
+    if data:
+        await inserting_doctor_Data(data)
+        return {"data_entered":"yes"}
+    else:
+        return {"data_entered":"no"}
+
+@app.post("/doconline_booking/{doctor_id}/doc_fee/{d_online_fee}/doc_online_days/{days}/doc_timing/{time}")
+async def doconline_booking(doctor_id:int ,d_online_fee:int, days:str , time:str):
+    if doctor_id:
+        await Dset_online_booking(doctor_id,d_online_fee,days,time)
+        return {"data_entered":"yes"}
+    else:
+        return {"data_entered":"no"}
+
+@app.post("/docoffline_booking/{doctor_id}/docfee/{doc_fee}/days/{days}/location/{locat}/time/{time}")
+async def docoffline_booking(doctor_id:int,doc_fee:int,days:str,locat:str,time:str):
+    if doctor_id:
+        await Dset_onsite_booking(doctor_id,doc_fee,days,locat,time)
+        return {"data_entered":"yes"}
+    else:
+        return {"data_entered":"no"}
+
+@app.get("/getdoctor_fromdb/{city}/specilization/{specaility}")
+async def getdoctor_fromdb(city:str,specaility:str):
+    city = city.lower()
+    specaility = specaility.lower()
+    doctor_data =  await getting_doctor(city,specaility)
+    if doctor_data == "no":
+        return {"doctor found":"no"}
+
+    return doctor_data
+
+
+
 
 
  

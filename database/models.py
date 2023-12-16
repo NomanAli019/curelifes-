@@ -13,7 +13,7 @@ connection = mysql.connector.connect(
 
 cursor = connection.cursor()
 
-# droping_Table = """DROP TABLE doctors"""
+# droping_Table = """DROP TABLE doc_onsite_booking"""
 
 # create_table_query = """
 # CREATE TABLE IF NOT EXISTS disease_Data (
@@ -39,14 +39,14 @@ cursor = connection.cursor()
 
 
 
-#  """
+# query =   """
 
 # CREATE TABLE IF NOT EXISTS doc_online_booking (
 #     online_booking_id INT AUTO_INCREMENT PRIMARY KEY,
 #     doctor_id INT,
 #     d_online_fee INT,
 #     d_online_days TEXT,
-#     d_online_time TIME 
+#     d_online_time TEXT 
 # );
 
 
@@ -70,14 +70,14 @@ cursor = connection.cursor()
 # );
 
 
-#     CREATE TABLE IF NOT EXISTS doc_onsite_booking (
-#     onsite_booking_id INT AUTO_INCREMENT PRIMARY KEY,
-#     doctor_id INT,
-#     d_onsite_fee INT,
-#     d_onsite_days TEXT,
-#     d_onsite_loc VARCHAR(255),
-#     d_onsite_time TIME
-# );
+query = """  CREATE TABLE IF NOT EXISTS doc_onsite_booking (
+    onsite_booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    doctor_id INT,
+    d_onsite_fee INT,
+    d_onsite_days TEXT,
+    d_onsite_loc VARCHAR(255),
+    d_onsite_time TEXT
+);"""
 # CREATE TABLE Doc_profile(
 # d_profile_id INT PRIMARY KEY AUTO_INCREMENT, 
 # doc_id INT ,
@@ -95,25 +95,25 @@ cursor = connection.cursor()
 # Rest of your code remains unchanged
 
 
-query  = """
-CREATE TABLE IF NOT EXISTS doctors (
-    doctor_id INT AUTO_INCREMENT PRIMARY KEY,
-    d_first_name VARCHAR(50) NOT NULL,
-    d_last_name VARCHAR(50) NOT NULL,
-    d_date_of_birth DATE NOT NULL,
-    d_gender VARCHAR(50) NOT NULL,
-    d_phone_number VARCHAR(20),
-    d_address VARCHAR(255),
-    d_registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    d_specialization VARCHAR(100) NOT NULL,
-    d_license_number VARCHAR(20) UNIQUE,
-    d_hospital_affiliation VARCHAR(255),
-    d_experience_years INT,
-    d_email VARCHAR(100) UNIQUE,
-    d_password VARCHAR(10) -- Removed the extra comma
-);
+# query  = """
+# CREATE TABLE IF NOT EXISTS doctors (
+#     doctor_id INT AUTO_INCREMENT PRIMARY KEY,
+#     d_first_name VARCHAR(50) NOT NULL,
+#     d_last_name VARCHAR(50) NOT NULL,
+#     d_date_of_birth DATE NOT NULL,
+#     d_gender VARCHAR(50) NOT NULL,
+#     d_phone_number VARCHAR(20),
+#     d_address VARCHAR(255),
+#     d_registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+#     d_specialization VARCHAR(100) NOT NULL,
+#     d_license_number VARCHAR(20) UNIQUE,
+#     d_hospital_affiliation VARCHAR(255),
+#     d_experience_years INT,
+#     d_email VARCHAR(100) UNIQUE,
+#     d_password VARCHAR(10) 
+# );
 
-"""
+# """
 cursor.execute(query)
 
 connection.commit()
