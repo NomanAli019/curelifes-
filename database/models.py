@@ -106,6 +106,7 @@ query = """  CREATE TABLE IF NOT EXISTS doc_onsite_booking (
 #     d_address VARCHAR(255),
 #     d_registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 #     d_specialization VARCHAR(100) NOT NULL,
+#     d_degree VARCHAR(255) NOT NULL,
 #     d_license_number VARCHAR(20) UNIQUE,
 #     d_hospital_affiliation VARCHAR(255),
 #     d_experience_years INT,

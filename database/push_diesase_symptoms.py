@@ -44,6 +44,6 @@ def symptoms_fromcsv_db():
 
 disease_fromcsv_db()
 symptoms_fromcsv_db()
-
+    
 cursor.close()
 connection.close()
