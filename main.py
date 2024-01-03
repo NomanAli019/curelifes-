@@ -6,6 +6,7 @@ import random
 import json
 from doctorDataCleaning.doctClean import doc_data_sepration 
 from doctorcallbacks.doctor import inserting_doctor_Data , Dset_online_booking , Dset_onsite_booking,getting_doctor
+from database.db_operations import get_disease_Data
 app = FastAPI()
 import requests
 from bs4 import BeautifulSoup
@@ -83,6 +84,30 @@ async def getdoctor_fromdb(city:str,specaility:str):
         return {"doctor found":"no"}
 
     return doctor_data
+
+@app.get("/get_disease{disease}")
+async def get_disease(disease:str): 
+
+    disease_data = await get_disease_Data(disease)
+
+
+    if disease_data:
+        print(disease_data)
+
+        # Assuming disease_data is a list of tuples
+        disease_dict = {}
+        d_id, d_name, d_detail, d_precaution, d_doctor = disease_data
+        disease_dict = {
+                'd_id': d_id,
+                'd_name': d_name,
+                'd_detail': d_detail,
+                'd_precaution': d_precaution,
+                'd_doctor': d_doctor
+            }
+
+    print(disease_dict)
+
+    return disease_dict
 
 
 

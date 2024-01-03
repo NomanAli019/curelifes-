@@ -86,3 +86,11 @@ async def get_offline_docbooking(doc_id):
     cursor.execute(query , values)
     result = cursor.fetchall()
     return result
+
+async def get_disease_Data(disease):
+    query = """select * from disease_Data
+            where Dis_name = %s;"""
+    values = (disease,)
+    cursor.execute(query,values)
+    result = cursor.fetchone()
+    return result
