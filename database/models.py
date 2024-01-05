@@ -13,29 +13,29 @@ connection = mysql.connector.connect(
 
 cursor = connection.cursor()
 
-# droping_Table = """DROP TABLE doc_onsite_booking"""
+# droping_Table = """DROP TABLE symptoms_Data"""
 
 # create_table_query = """
 # CREATE TABLE IF NOT EXISTS disease_Data (
 #     Dis_id INT AUTO_INCREMENT PRIMARY KEY,
 #     Dis_name VARCHAR(255),
-#     Dis_detail LONGTEXT,
-#     Dis_prec LONGTEXT,
-#     Dis_rel_doc_spec LONGTEXT
+#     Dis_detail VARCHAR(2000),
+#     Dis_prec VARCHAR(2000),
+#     Dis_rel_doc_spec VARCHAR(2000)
 
 # )
 # """
 # cursor.execute(create_table_query)
-# create_table_sympots = """
-#     CREATE TABLE IF NOT EXISTS symptoms_Data(
-#     Sym_id INT AUTO_INCREMENT PRIMARY KEY , 
-#     Sym_name VARCHAR(255),
-#     Sym_detail LONGTEXT,
-#     Sym_precaution LONGTEXT,
-#     Sym_disease LONGTEXT,
-#     Sym_Doctor LONGTEXT
-#     )
-# """
+create_table_sympots = """
+    CREATE TABLE IF NOT EXISTS symptoms_Data(
+    Sym_id INT AUTO_INCREMENT PRIMARY KEY , 
+    Sym_name VARCHAR(255),
+    Sym_detail VARCHAR(2000),
+    Sym_precaution VARCHAR(2000),
+    Sym_disease VARCHAR(2000),
+    Sym_Doctor VARCHAR(2000)
+    )
+"""
 
 
 
@@ -70,14 +70,14 @@ cursor = connection.cursor()
 # );
 
 
-query = """  CREATE TABLE IF NOT EXISTS doc_onsite_booking (
-    onsite_booking_id INT AUTO_INCREMENT PRIMARY KEY,
-    doctor_id INT,
-    d_onsite_fee INT,
-    d_onsite_days TEXT,
-    d_onsite_loc VARCHAR(255),
-    d_onsite_time TEXT
-);"""
+# query = """  CREATE TABLE IF NOT EXISTS doc_onsite_booking (
+#     onsite_booking_id INT AUTO_INCREMENT PRIMARY KEY,
+#     doctor_id INT,
+#     d_onsite_fee INT,
+#     d_onsite_days TEXT,
+#     d_onsite_loc VARCHAR(255),
+#     d_onsite_time TEXT
+# );"""
 # CREATE TABLE Doc_profile(
 # d_profile_id INT PRIMARY KEY AUTO_INCREMENT, 
 # doc_id INT ,
@@ -115,7 +115,7 @@ query = """  CREATE TABLE IF NOT EXISTS doc_onsite_booking (
 # );
 
 # """
-cursor.execute(query)
+cursor.execute(create_table_sympots)
 
 connection.commit()
 

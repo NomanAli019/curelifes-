@@ -1,2 +1,4 @@
 protobuf===4.21.12
 mysql_connector_python===8.2.0
+PyMySQL===1.1.0
+aiomysql===0.2.0

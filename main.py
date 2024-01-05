@@ -2,13 +2,15 @@ from fastapi import FastAPI,Query
 import uvicorn 
 from patientcallbacks.patient import separete_patientdata
 from typing import Dict
+from blogData.get_disease import cleaning_Disease , cleaning_symptoms
 import random 
 import json
 from doctorDataCleaning.doctClean import doc_data_sepration 
 from doctorcallbacks.doctor import inserting_doctor_Data , Dset_online_booking , Dset_onsite_booking,getting_doctor
-from database.db_operations import get_disease_Data
+
 app = FastAPI()
 import requests
+
 from bs4 import BeautifulSoup
 @app.get("/")
 async def index_dermo():
@@ -85,33 +87,16 @@ async def getdoctor_fromdb(city:str,specaility:str):
 
     return doctor_data
 
-@app.get("/get_disease{disease}")
-async def get_disease(disease:str): 
+@app.get("/get_disease/{disease}")
+async def get_disease(disease: str): 
+    print(disease)
+    disease_detial = await cleaning_Disease(disease)
+    return disease_detial
 
-    disease_data = await get_disease_Data(disease)
-
-
-    if disease_data:
-        print(disease_data)
-
-        # Assuming disease_data is a list of tuples
-        disease_dict = {}
-        d_id, d_name, d_detail, d_precaution, d_doctor = disease_data
-        disease_dict = {
-                'd_id': d_id,
-                'd_name': d_name,
-                'd_detail': d_detail,
-                'd_precaution': d_precaution,
-                'd_doctor': d_doctor
-            }
-
-    print(disease_dict)
-
-    return disease_dict
-
-
-
-
+@app.get("/symptomsblog/{symptom}")
+async def get_symptom(symptom:str):
+    symptom_Detail = await cleaning_symptoms(symptom)
+    return symptom_Detail
 
  
 if __name__ == "__main__":

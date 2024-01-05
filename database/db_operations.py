@@ -10,7 +10,7 @@ connection = mysql.connector.connect(
     password = password,
     database = database_name
 )
-cursor = connection.cursor()
+cursor =  connection.cursor()
  
 async def insert_patient(p_first_name, p_last_name, p_date_of_birth, p_gender, p_phone_number, p_address, p_registration_date, p_medical_history, p_emergency_contact_name, p_emergency_contact_phone, p_email, p_password):
     patient_insert_query = """
@@ -87,10 +87,20 @@ async def get_offline_docbooking(doc_id):
     result = cursor.fetchall()
     return result
 
+
 async def get_disease_Data(disease):
     query = """select * from disease_Data
             where Dis_name = %s;"""
     values = (disease,)
     cursor.execute(query,values)
-    result = cursor.fetchone()
+    result = cursor.fetchall()
+
+    return result
+
+async def get_symptom_Data(symptom):
+    query = """select * from symptoms_data
+        where Sym_name = %s;"""
+    values = (symptom,)
+    cursor.execute(query, values)
+    result  = cursor.fetchall()
     return result
