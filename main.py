@@ -7,7 +7,7 @@ import random
 import json
 from doctorDataCleaning.doctClean import doc_data_sepration 
 from doctorcallbacks.doctor import inserting_doctor_Data , Dset_online_booking , Dset_onsite_booking,getting_doctor
-
+from typing import List
 app = FastAPI()
 import requests
 
@@ -43,11 +43,10 @@ async def dermotologist_lahore(city:str , speciality:str , pageno:int):
 
 # patient insert 
 @app.post("/patient_datainsert")
-async def patient_data(data: dict):
-        # Assuming data is a dictionary
-    if data:
+async def patient_data(signup_data: List[str]):
+    if signup_data:
         print("we here")
-        await separete_patientdata(data)
+        await separete_patientdata(signup_data)
         return {"data_entered": "yes"}
     else:
         return {"data_entered":"No"}
@@ -102,5 +101,5 @@ async def get_symptom(symptom:str):
 
  
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("main:app", host="127.0.0.1", port=7000, reload=True)
 

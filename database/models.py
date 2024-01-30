@@ -26,16 +26,16 @@ cursor = connection.cursor()
 # )
 # """
 # cursor.execute(create_table_query)
-create_table_sympots = """
-    CREATE TABLE IF NOT EXISTS symptoms_Data(
-    Sym_id INT AUTO_INCREMENT PRIMARY KEY , 
-    Sym_name VARCHAR(255),
-    Sym_detail VARCHAR(2000),
-    Sym_precaution VARCHAR(2000),
-    Sym_disease VARCHAR(2000),
-    Sym_Doctor VARCHAR(2000)
-    )
-"""
+# create_table_sympots = """
+#     CREATE TABLE IF NOT EXISTS symptoms_Data(
+#     Sym_id INT AUTO_INCREMENT PRIMARY KEY , 
+#     Sym_name VARCHAR(255),
+#     Sym_detail VARCHAR(2000),
+#     Sym_precaution VARCHAR(2000),
+#     Sym_disease VARCHAR(2000),
+#     Sym_Doctor VARCHAR(2000)
+#     )
+# """
 
 
 
@@ -52,22 +52,22 @@ create_table_sympots = """
 
 # """
 
-# boooking = """
-# CREATE TABLE IF NOT EXISTS patients (
-#     patient_id INT AUTO_INCREMENT PRIMARY KEY,
-#     p_first_name VARCHAR(50) NOT NULL,
-#     p_last_name VARCHAR(50) NOT NULL,
-#     p_date_of_birth DATE NOT NULL,
-#     p_gender VARCHAR(50) NOT NULL,
-#     p_phone_number VARCHAR(20),
-#     p_address VARCHAR(255),
-#     p_registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-#     p_medical_history TEXT,
-#     p_emergency_contact_name VARCHAR(100),
-#     p_emergency_contact_phone VARCHAR(20),
-#     p_email VARCHAR(100) UNIQUE,
-#     p_password VARCHAR(10)
-# );
+boooking = """
+CREATE TABLE IF NOT EXISTS patients (
+    patient_id INT AUTO_INCREMENT PRIMARY KEY,
+    p_first_name VARCHAR(50) NOT NULL,
+    p_last_name VARCHAR(50) NOT NULL,
+    p_date_of_birth VARCHAR(50) NOT NULL,
+    p_gender VARCHAR(50) NOT NULL,
+    p_phone_number VARCHAR(20),
+    p_address VARCHAR(255),
+    p_registration_date VARCHAR(50),
+    p_medical_history TEXT,
+    p_emergency_contact_name VARCHAR(100),
+    p_emergency_contact_phone VARCHAR(20),
+    p_email VARCHAR(100) UNIQUE,
+    p_password VARCHAR(10)
+);"""
 
 
 # query = """  CREATE TABLE IF NOT EXISTS doc_onsite_booking (
@@ -115,7 +115,7 @@ create_table_sympots = """
 # );
 
 # """
-cursor.execute(create_table_sympots)
+cursor.execute(boooking)
 
 connection.commit()
 

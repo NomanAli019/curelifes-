@@ -13,13 +13,19 @@ connection = mysql.connector.connect(
 cursor =  connection.cursor()
  
 async def insert_patient(p_first_name, p_last_name, p_date_of_birth, p_gender, p_phone_number, p_address, p_registration_date, p_medical_history, p_emergency_contact_name, p_emergency_contact_phone, p_email, p_password):
-    patient_insert_query = """
-    INSERT INTO patients(p_first_name, p_last_name, p_date_of_birth, p_gender, p_phone_number, p_address, p_registration_date, p_medical_history, p_emergency_contact_name, p_emergency_contact_phone, p_email, p_password)
-    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-    """
-    values = (p_first_name, p_last_name, p_date_of_birth, p_gender, p_phone_number, p_address, p_registration_date, p_medical_history, p_emergency_contact_name, p_emergency_contact_phone, p_email, p_password)
-    cursor.execute(patient_insert_query, values)
-    connection.commit()
+    check_user_existance_query = f"Select * from patients where p_email = {p_email}"
+    cursor.execute(check_user_existance_query)
+    result = cursor.fetchone()
+    if result:
+        print("user already exists")
+    else:
+        patient_insert_query = """
+        INSERT INTO patients(p_first_name, p_last_name, p_date_of_birth, p_gender, p_phone_number, p_address, p_registration_date, p_medical_history, p_emergency_contact_name, p_emergency_contact_phone, p_email, p_password)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """
+        values = (p_first_name, p_last_name, p_date_of_birth, p_gender, p_phone_number, p_address, p_registration_date, p_medical_history, p_emergency_contact_name, p_emergency_contact_phone, p_email, p_password)
+        cursor.execute(patient_insert_query, values)
+        connection.commit()
 
 async def insert_doctor(doctor_list):
     print(doctor_list)
