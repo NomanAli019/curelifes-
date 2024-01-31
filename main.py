@@ -8,6 +8,7 @@ import json
 from doctorDataCleaning.doctClean import doc_data_sepration 
 from doctorcallbacks.doctor import inserting_doctor_Data , Dset_online_booking , Dset_onsite_booking,getting_doctor
 from typing import List
+from pydantic import BaseModel
 app = FastAPI()
 import requests
 
@@ -46,11 +47,23 @@ async def dermotologist_lahore(city:str , speciality:str , pageno:int):
 async def patient_data(signup_data: List[str]):
     if signup_data:
         print("we here")
-        await separete_patientdata(signup_data)
-        return {"data_entered": "yes"}
+        result = await separete_patientdata(signup_data)
+        if result:
+            return {"data_entered": "yes"}
+        else:
+            return {"data_entered":"No"}
     else:
         return {"data_entered":"No"}
 
+# get patient 
+class LoginData(BaseModel):
+    email: str
+    password: str
+@app.post("/login")
+async def login(login_data:LoginData):
+    print(f"Email is = {login_data.email} , and password = {login_data.password} ")
+
+    return {'Worked':'Yes'}
 # doctor insert
 @app.post("/doctors_datainsert")
 async def doctor_data(data:dict):
