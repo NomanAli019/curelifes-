@@ -29,6 +29,15 @@ async def insert_patient(p_first_name, p_last_name, p_date_of_birth, p_gender, p
         cursor.execute(patient_insert_query, values)
         connection.commit()
         return True
+    
+async def getpatient_data(email,passowrd):
+    check_user_existance_query = "SELECT * FROM patients WHERE p_email = %s"
+    cursor.execute(check_user_existance_query, (email,))
+    result = cursor.fetchone()
+
+    print(result)
+
+    return result
 
 async def insert_doctor(doctor_list):
     print(doctor_list)

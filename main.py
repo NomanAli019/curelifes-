@@ -1,4 +1,4 @@
-from fastapi import FastAPI,Query
+from fastapi import FastAPI,Query ,Request
 import uvicorn 
 from patientcallbacks.patient import separete_patientdata
 from typing import Dict
@@ -7,6 +7,7 @@ import random
 import json
 from doctorDataCleaning.doctClean import doc_data_sepration 
 from doctorcallbacks.doctor import inserting_doctor_Data , Dset_online_booking , Dset_onsite_booking,getting_doctor
+from database.db_operations import getpatient_data
 from typing import List
 from pydantic import BaseModel
 app = FastAPI()
@@ -56,14 +57,13 @@ async def patient_data(signup_data: List[str]):
         return {"data_entered":"No"}
 
 # get patient 
-class LoginData(BaseModel):
-    email: str
-    password: str
-@app.post("/login")
-async def login(login_data:LoginData):
-    print(f"Email is = {login_data.email} , and password = {login_data.password} ")
 
+@app.get("/loginpatient/{email}/{password}")
+async def loginpatient(email:str , password:str):
+    print("we here")
+    result = await getpatient_data(email , password)
     return {'Worked':'Yes'}
+
 # doctor insert
 @app.post("/doctors_datainsert")
 async def doctor_data(data:dict):
