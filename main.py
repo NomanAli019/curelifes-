@@ -61,6 +61,7 @@ async def patient_data(signup_data: List[str]):
 @app.get("/loginpatient/{email}/{password}")
 async def loginpatient(email:str , password:str):
     print("we here")
+    
     result = await getpatient_data(email , password)
     return {'Worked':'Yes'}
 
