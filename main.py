@@ -49,9 +49,9 @@ async def patient_data(signup_data: List[str]):
     if signup_data:
         print("we here")
         result = await separete_patientdata(signup_data)
-        if result:
+        if result == True:
             return {"data_entered": "yes"}
-        else:
+        else :
             return {"data_entered":"No"}
     else:
         return {"data_entered":"No"}
