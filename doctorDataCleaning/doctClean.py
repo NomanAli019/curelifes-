@@ -42,7 +42,7 @@ async def doc_data_sepration(one_doc):
 
     # first exception for online booking 
     try:
-        print(doc_online_booking)
+        
         if doc_online_booking:
             doc_availibility = doc_online_booking.find("p" , class_="mb-0 text-sm")
             doc_online_fee = doc_online_booking.find("p" , class_="mb-0 price text-sm")
