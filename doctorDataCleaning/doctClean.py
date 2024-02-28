@@ -35,28 +35,59 @@ async def doc_data_sepration(one_doc):
             doct_dict["doc_degree"]  = None
     if doc_experience:
         doct_dict["doc_experience"] = doc_experience.text
+
     else:
         doct_dict["doc_experience"] = None
-    if doc_online_booking:
-        doc_availibility = doc_online_booking.find("p" , class_="mb-0 text-sm")
-        doc_online_fee = doc_online_booking.find("p" , class_="mb-0 price text-sm")
-        
-        doct_dict["Availability_online"]  = doc_availibility.text
-        doct_dict["doc_online_fee"] = doc_online_fee.text
-        
-    else:
-        doct_dict["doc_online_booking"] = None
 
-    if doc_on_site_booking:
-        
-        doc_onsite_Address = doc_on_site_booking.find("p" , class_="mb-0 text-bold text-blue text-sm")
-        doc_on_site_fee = doc_on_site_booking.find("p" , class_="mb-0 price text-sm")
-        doc_on_site_availibility = doc_on_site_booking.find("p" , class_="mb-0 text-sm")
-        doct_dict["doc_on_site_avaibability"] = doc_on_site_availibility.text
-        doct_dict["doc_on_site_fee"] = doc_on_site_fee.text
-        doct_dict["doc_location"] = doc_onsite_Address.text
 
-    else:
-        doct_dict["doc_on_site_booking"] = None
+    # first exception for online booking 
+    try:
+        print(doc_online_booking)
+        if doc_online_booking:
+            doc_availibility = doc_online_booking.find("p" , class_="mb-0 text-sm")
+            doc_online_fee = doc_online_booking.find("p" , class_="mb-0 price text-sm")
+            
+            doct_dict["Availability_online"]  = doc_availibility.text
+            doct_dict["doc_online_fee"] = doc_online_fee.text
+            
+        else:
+            doct_dict["doc_online_booking"] = None
+
+    except Exception as e:
+        if doc_online_booking:
+            doc_availibility = doc_online_booking.find("p" , class_="text-sm text-wrap")
+            doc_online_fee = doc_online_booking.find("p" , class_="mb-0 price text-sm text-bold")
+            
+            doct_dict["Availability_online"]  = doc_availibility.text
+            doct_dict["doc_online_fee"] = doc_online_fee.text
+        
+        else:
+            doct_dict["doc_online_booking"] = None
+
+    #  second exception for on site booking 
+    try:
+        if doc_on_site_booking:
+            
+            doc_onsite_Address = doc_on_site_booking.find("p" , class_="mb-0 text-bold text-blue text-sm")
+            doc_on_site_fee = doc_on_site_booking.find("p" , class_="mb-0 price text-sm")
+            doc_on_site_availibility = doc_on_site_booking.find("p" , class_="mb-0 text-sm")
+            doct_dict["doc_on_site_avaibability"] = doc_on_site_availibility.text
+            doct_dict["doc_on_site_fee"] = doc_on_site_fee.text
+            doct_dict["doc_location"] = doc_onsite_Address.text
+
+        else:
+            doct_dict["doc_on_site_booking"] = None
+
+    except Exception as e:
+        if doc_on_site_booking:
+            doc_onsite_Address = doc_on_site_booking.find("p" , class_="mb-0 text-bold text-blue text-sm")
+            doc_on_site_fee = doc_on_site_booking.find("p" , class_="mb-0 price text-sm text-bold")
+            doc_on_site_availibility = doc_on_site_booking.find("p" , class_="text-sm")
+            doct_dict["doc_on_site_avaibability"] = doc_on_site_availibility.text
+            doct_dict["doc_on_site_fee"] = doc_on_site_fee.text
+            doct_dict["doc_location"] = doc_onsite_Address.text
+
+        else:
+            doct_dict["doc_on_site_booking"] = None
 
     return doct_dict
